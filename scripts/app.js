@@ -3,16 +3,65 @@
 // B. Which date within a given date range had the highest trading volume
 // C. Tells the best day for buying/selling bitcoin for a given date range
 
+// DOM manipulation variables
+const dataForm = document.querySelector('form');
+const results = document.querySelector('.results');
+
+// function that displays results to user
+const updateUI = (data) => {
+    console.log(data)
+    results.innerHTML = `
+        <h5>Results for period</h5>
+        <h5>${data.y}</h5>
+        <h5>Price</h5>
+        <h5>${data.x}</h5>
+    `;
+}
+
+// listen to UI changes
+dataForm.addEventListener('submit', e => {
+    e.preventDefault(); //prevent default action
+
+    // get value from datepicker in format YYYY-MM-DD e.g. 2012-02-10
+    const startDateString = dataForm.startDate.value;
+    const endDateString = dataForm.endDate.value;
+
+    // convert date to UTC format
+    const startDateUtc = new Date(startDateString)
+    const endDateUtc = new Date(endDateString)
+
+    // convert date to timestamp in seconds 
+    const startDateSeconds = convertUtcDateToSeconds(startDateUtc);
+    const endDateSeconds = convertUtcDateToSeconds(endDateUtc) + 3600;  // 1 hour added so there will be always non-empty response (mentioned in task)
+    console.log(startDateString, startDateUtc, endDateString,  startDateSeconds, endDateSeconds )
+
+    dataForm.reset();
+
+    //update the UI with new data
+    updateData(startDateSeconds, endDateSeconds)
+        .then(data => updateUI(data))
+        
+        .catch(err => {
+            console.log(err)
+            results.innerHTML = '<h5>Error: Please check start date and end date and try again</h5>';
+        });
+})
+
 // "main" function
 const updateData = async (startDate, endDate) => {
-    
-    const bitcoinData = await fetchData(startDate, endDate);
-    
-    const priceList = bitcoinData.prices // get all prices for the period
-    const volumeList = bitcoinData.total_volumes // get all volumes for the period
-    console.log("price", priceList)
-    console.log("volume", volumeList)
-      
-    return bitcoinData
+    try {
+        const bitcoinData = await fetchData(startDate, endDate);
+        
+        const priceList = bitcoinData.prices // get all prices for the period
+        const volumeList = bitcoinData.total_volumes // get all volumes for the period
+        console.log("price", priceList)
+        console.log("volume", volumeList)
+        const y = priceList[0][0]
+        const x = priceList[0][1]
+        
+        return {x, y}
+    } catch (e) {
+        console.log(e)
+        throw e
+    }        
 }
-updateData(1609459200, 1609549200)
