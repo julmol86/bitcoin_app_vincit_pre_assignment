@@ -7,8 +7,33 @@
     <title>Bitcoin App</title>
 </head>
 <body>
-    <h1>Bitcoin App</h1>
+    <div>
+        <h1>Bitcoin App</h1>
+        
+        <form >
+            <label>Enter the start and end date for bitcoin information</label>
+            <div>
+                <div>
+                    <input class="form-control" type="date" name="startDate" required>               
+                </div>
+                <div>
+                    <input class="form-control" type="date" name="endDate" required>
+                </div>
+            </div>
+                     
+            <button type="submit">Submit</button>            
+        </form>
+
+        <div >           
+            <div >
+                <h5>Press Submit to see the results</h5>
+                <!-- (calculation results will appear here) -->
+            </div>
+        </div>   
+    </div>
+    
 
     <script src="scripts/fetchData.js"></script>
+    <script src="scripts/app.js"></script>
 </body>
 </html>

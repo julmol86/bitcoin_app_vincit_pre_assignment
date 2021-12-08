@@ -4,7 +4,5 @@ const fetchData = async (startDate, endDate) => {
     const query = `?vs_currency=eur&from=${startDate}&to=${endDate}`;
     const response = await fetch(base+query);
     const data = await response.json();
-    console.log("data", data)
     return data
 }
-fetchData(1609459200, 1609549200)
