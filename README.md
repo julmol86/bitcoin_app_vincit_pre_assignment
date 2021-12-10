@@ -16,10 +16,10 @@ Bitcoin App is made for Vincit's client Scrooge McDuck, however application is p
 * Which date within a given date range had the highest trading volume
 * The best day for buying/selling bitcoin for a given date range
 # Technologies
-Bootstrap 5.1.3
-HTML
-JavaScript ES6
+* Bootstrap 5.1.3
+* HTML
+* JavaScript ES6
 # Work log
-*8.12.2021: Project start. Creating GitHub repository. HTML template for UI. Fetching data from Coingecko API. Converting user's input to timestamp.
-*9.12.2021: Bootstrap styles
-*10.12.2021: Getting one value per day
+* 8.12.2021: Project start. Creating GitHub repository. HTML template for UI. Fetching data from Coingecko API. Converting user's input to timestamp.
+* 9.12.2021: Bootstrap styles
+* 10.12.2021: Getting one value per day
