@@ -3,7 +3,7 @@ Pre-assignment for Vincit Rising Star program 2021
 # Author
 Yulia Mozhaeva
 # The goal of this project
-This application is built as pre-assignment for Vincit Rising Star program and to gain new knowledge in web development and REST-API and to practise in creating an application with UI, fetching data from API, making Bootstrap styles and
+This application is built as pre-assignment for Vincit Rising Star program and to gain new knowledge in web development and REST API and to practice in creating an application with UI, fetching data from API, making Bootstrap styles and
 working with asynchronous JavaScript and with Document Object Model.
 # Purpose of Bitcoin App
 Bitcoin App is made for Vincit's client Scrooge McDuck, however application is public and everyone who has a time machine and wants to make some profit or just interested in bitcoin historical data is welcome to use this app. 
