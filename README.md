@@ -8,10 +8,10 @@ working with asynchronous JavaScript and with Document Object Model.
 # Purpose of Bitcoin App
 Bitcoin App is made for Vincit's client Scrooge McDuck, however application is public and everyone who has a time machine and wants to make some profit or just interested in bitcoin historical data is welcome to use this app. 
 # Main features
-* User Interface
+* Graphical User Interface
 * Fetching data from Coingecko.com free API 
 * User can input start and end date to explore historical data of bitcoin
-# Bitcoin App provides following info:
+# Bitcoin App provides the following info:
 * How many days is the longest bearish (downward) trend within a given date range
 * Which date within a given date range had the highest trading volume
 * The best day for buying/selling bitcoin for a given date range
