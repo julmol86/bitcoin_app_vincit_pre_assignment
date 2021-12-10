@@ -58,6 +58,12 @@ const updateData = async (startDate, endDate) => {
         console.log("volume", volumeList)
         const y = priceList[0][0]
         const x = priceList[0][1]
+
+        const dayPrices = getDailyData(priceList, startDate, endDate) // get timestamp and only one price per day
+        const dayVolumes = getDailyData(volumeList, startDate, endDate) // get timestamp and only one volume per day
+    
+        console.log(dayPrices)
+        console.log(dayVolumes)
         
         return {x, y}
     } catch (e) {
