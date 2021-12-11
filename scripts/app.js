@@ -15,6 +15,9 @@ const updateUI = (data) => {
         <h5>${data.y}</h5>
         <h5>Price</h5>
         <h5>${data.x}</h5>
+        <h5>Downward</h5>
+        <h5>${data.maxDownward}</h5>
+
     `;
 }
 
@@ -64,8 +67,9 @@ const updateData = async (startDate, endDate) => {
     
         console.log(dayPrices)
         console.log(dayVolumes)
-        
-        return {x, y}
+        const maxDownward = getMaxDecrease(dayPrices) // find max downward (answer to A-task)
+        console.log(maxDownward)
+        return {x, y, maxDownward}
     } catch (e) {
         console.log(e)
         throw e
