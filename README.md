@@ -23,3 +23,4 @@ Bitcoin App is made for Vincit's client Scrooge McDuck, however application is p
 * 8.12.2021: Project start. Creating GitHub repository. HTML template for UI. Fetching data from Coingecko API. Converting user's input to timestamp.
 * 9.12.2021: Bootstrap styles
 * 10.12.2021: Getting one value per day
+* 11.12.2021: Finding longest bearish trend and showing results to the user
