@@ -11,7 +11,7 @@
 
     <title>Bitcoin App</title>
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100"> <!-- the footer stays always at the bottom of the page -->
     <div class="container my-5 mx-auto">
         <h1 class="my-4 text-secondary text-center">Bitcoin App</h1>
         
@@ -31,14 +31,17 @@
             <button type="submit" class="btn my-4 btn-secondary">Submit</button>            
         </form>
 
-        <div class="card rounded">           
+        <div class="card rounded mb-5">           
             <div class="text-secondary text-center results">
                 <h5 class="my-4 text-secondary text-center">Press Submit to see the results</h5>
                 <!-- (calculation results will appear here) -->
             </div>
         </div>   
     </div>
-    
+
+    <footer class="mt-auto">
+        <p class="text-secondary text-center">Bitcoin App by Yulia Mozhaeva, 2021</p>
+    </footer>
 
     <script src="scripts/fetchData.js"></script>
     <script src="scripts/utils.js"></script>
