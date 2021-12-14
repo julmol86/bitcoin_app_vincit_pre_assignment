@@ -37,3 +37,34 @@ const getMaxValue = (arr) => {
     console.log(max)
     return max
 }
+
+// C-task
+// function that calculates best buying and selling day for the given time range
+const getBuySellDays = (arr) => {
+    console.log(arr)
+    let maxDiff = arr[1][1] - arr[0][1]
+    let buyDateMillis
+    let sellDateMillis
+    var ostohinta
+    var myyntihinta
+    console.log('max_diff', maxDiff)
+    for(var i = 0; i < arr.length; i++){
+        for(var j = i + 1; j < arr.length; j++){
+            if(arr[j][1] - arr[i][1] >= maxDiff){
+                maxDiff = arr[j][1] - arr[i][1]
+                buyDateMillis = arr[i][0]
+                ostohinta = arr[i][1]
+                myyntihinta = arr[j][1]
+                sellDateMillis = arr[j][0]
+                console.log('max_diff1', maxDiff)               
+            }
+        }
+    }
+
+    console.log('max_diff2', maxDiff,'ostaa:', buyDateMillis, 'hinta:', ostohinta, 'myy', sellDateMillis, 'myyntihinta:', myyntihinta) 
+
+    return {
+        dateForBuy: convertMillisecondsToDateString(buyDateMillis),
+        dateForSale: convertMillisecondsToDateString(sellDateMillis)
+    }
+}

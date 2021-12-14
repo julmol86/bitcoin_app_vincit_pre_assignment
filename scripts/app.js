@@ -18,9 +18,11 @@ const updateUI = (data) => {
     <h4>Date with the highest trading volume </h4>
     <h5>${data.maxVolume.date}</h5>
     <h4>Highest trading volume </h4>
-    <h5 class="my-3">${data.maxVolume.value} € </h5>
+    <h5>${data.maxVolume.value} € </h5>
     <h4>The day to buy bitcoins </h4>
+    <h5>${data.profitDays.dateForBuy}</h5>
     <h4>The day to sell bitcoins</h4>
+    <h5>${data.profitDays.dateForSale}</h5>
     `;
 }
 
@@ -79,7 +81,17 @@ const updateData = async (startDate, endDate) => {
         const starting = convertMillisecondsToDateString(startDate*1000)
         const ending = convertMillisecondsToDateString(endDate*1000)
 
-        return {maxDownward, maxVolume, starting, ending}
+        let profitDays = {dateForBuy: "Don't buy", dateForSale: "Don't sell"}
+        
+        // Note: C-task (buying and selling dates) are not calculated if:
+        // - time range has only one day
+        // - price constantly decreasing on the whole time range
+        if (maxDownward !== dayPrices.length-1){
+            profitDays = getBuySellDays(dayPrices) // get best day for buying and selling (answer to C-task)
+        }
+        console.log(profitDays)
+
+        return {maxDownward, maxVolume, profitDays, starting, ending}
     } catch (e) {
         console.log(e)
         throw e
