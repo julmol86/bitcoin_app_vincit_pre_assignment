@@ -25,3 +25,4 @@ Bitcoin App is made for Vincit's client Scrooge McDuck, however application is p
 * 10.12.2021: Getting one value per day
 * 11.12.2021: Finding longest bearish trend and showing results to the user
 * 13.12.2021: Converting timestamp to date-format
+* 14.12.2021: Finding highest trading volume for given period and the day with this value
