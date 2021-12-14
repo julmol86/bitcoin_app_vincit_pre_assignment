@@ -21,3 +21,19 @@ const getMaxDecrease = (arr) => {
     }   
     return current > maxPeriod ? current : maxPeriod // in case if downward is in the end of the range
 }
+
+// B-task
+// function returns max value and its date
+const getMaxValue = (arr) => {
+    const objArr = arr.map(x => ({ date: convertMillisecondsToDateString(x[0]), value: x[1] }));
+
+    // note: it is assumed that array is always non-empty, therefore there is no empty-check inside
+    let max = objArr[0]
+    objArr.forEach(obj => {
+        if(obj.value > max.value) {            
+            max = obj        
+        }
+    })
+    console.log(max)
+    return max
+}

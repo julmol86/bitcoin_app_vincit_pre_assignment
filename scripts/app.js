@@ -11,13 +11,16 @@ const results = document.querySelector('.results');
 const updateUI = (data) => {
     console.log(data)
     results.innerHTML = `
-        <h5>Results for period</h5>
-        <h5>${data.y}</h5>
-        <h5>Price</h5>
-        <h5>${data.x}</h5>
-        <h5>Downward</h5>
-        <h5>${data.maxDownward}</h5>
-
+    <h4>Results for period</h4>
+    <h5>${data.starting} - ${data.ending}</h5>
+    <h4>The maximum amount of days bitcoin price was decreasing in a row </h4>
+    <h5>${data.maxDownward}</h5>
+    <h4>Date with the highest trading volume </h4>
+    <h5>${data.maxVolume.date}</h5>
+    <h4>Highest trading volume </h4>
+    <h5 class="my-3">${data.maxVolume.value} € </h5>
+    <h4>The day to buy bitcoins </h4>
+    <h4>The day to sell bitcoins</h4>
     `;
 }
 
@@ -69,7 +72,14 @@ const updateData = async (startDate, endDate) => {
         console.log(dayVolumes)
         const maxDownward = getMaxDecrease(dayPrices) // find max downward (answer to A-task)
         console.log(maxDownward)
-        return {x, y, maxDownward}
+
+        const maxVolume = getMaxValue(dayVolumes) // find max volume (answer to B-task)  
+        console.log('max volume', maxVolume.value, 'date', maxVolume.date)
+
+        const starting = convertMillisecondsToDateString(startDate*1000)
+        const ending = convertMillisecondsToDateString(endDate*1000)
+
+        return {maxDownward, maxVolume, starting, ending}
     } catch (e) {
         console.log(e)
         throw e
