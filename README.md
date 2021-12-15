@@ -1,8 +1,11 @@
-![123](https://user-images.githubusercontent.com/85441725/146150212-9f6e276f-7467-43fb-9593-f46097389c26.png)
 # Bitcoin App
 Pre-assignment for Vincit Rising Star program 2021
+<br />
+<br />
+![123](https://user-images.githubusercontent.com/85441725/146150212-9f6e276f-7467-43fb-9593-f46097389c26.png)
 # Running this App
 Working live version can be found at https://appbitcoin.herokuapp.com/
+<br />
 Runnig locally: download all files from master branch, and open index.html -file
 # The goal of this project
 This application is built as pre-assignment for Vincit Rising Star program and to gain new knowledge in web development and REST API and to practice in creating an application with UI, fetching data from API, making Bootstrap styles and
