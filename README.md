@@ -6,7 +6,9 @@ Pre-assignment for Vincit Rising Star program 2021
 # Running this App
 Working live version can be found at https://appbitcoin.herokuapp.com/
 <br />
-Runnig locally: download all files from master branch, and open index.html -file
+Runnig locally: download all files from master branch, and open index.html -file in browser
+<br />
+Running tests: after downloading all files from master branch, open src -folder and open test.html - file in browser
 # The goal of this project
 This application is built as pre-assignment for Vincit Rising Star program and to gain new knowledge in web development and REST API and to practice in creating an application with UI, fetching data from API, making Bootstrap styles and
 working with asynchronous JavaScript and with Document Object Model.
